@@ -11,6 +11,8 @@ import os, re
 primaryBibs = os.listdir(pathToPri)
 secondaryBibs = os.listdir(pathToSec)
 
+csvConnector = "\t"
+
 def splitBibs(path, var):
     csv = []
     for f in os.listdir(path):
@@ -30,7 +32,7 @@ def splitBibs(path, var):
                                 with open(targetBibPath + key + ".bib", "w", encoding="utf8") as f9:
                                     f9.write(bib)
 
-                                csv.append("%s,%s%s" % (key, targetBibLink, key+".bib"))
+                                csv.append("%s%s%s%s" % (key, csvConnector, targetBibLink, key+".bib"))
                         else:
                             if re.search("^\w+$", key):
                                 print(key)
@@ -40,9 +42,9 @@ def splitBibs(path, var):
                                 with open(targetBibPath + key + ".bib", "w", encoding="utf8") as f9:
                                     f9.write(bib)
 
-                                csv.append("%s\t%s%s" % (key, targetBibLink, key+".bib"))
+                                csv.append("%s%s%s%s" % (key, csvConnector, targetBibLink, key+".bib"))
 
-    csv = "bibTeX Key, Link to bibTeX File\n" + "\n".join(sorted(csv))
+    csv = "bibTeX Key%sLink to bibTeX File\n" % csvConnector + "\n".join(sorted(csv))
     with open("../bibTex_%s.csv" % var, "w", encoding="utf8") as f9:
         f9.write(csv)
 
