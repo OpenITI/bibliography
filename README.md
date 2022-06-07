@@ -15,7 +15,7 @@
 		- AUTHORITY
 		- PROVENANCE
 
-[./scripts/STAR_examples.png](./scripts/STAR_examples.png)
+![./scripts/STAR_examples.png](./scripts/STAR_examples.png)
 
 ## Adaptation to OpenITI YML files:
 
