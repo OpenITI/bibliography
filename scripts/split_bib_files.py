@@ -114,7 +114,7 @@ def procesBib(bibTexFolder, var):
         with open(targetBibPath + aKEY + ".bib", "w", encoding="utf8") as f9:
             f9.write(v["complete"].strip())
 
-    tsvFinal = "KEY\tAUTHOR+TITLE\tBIB FILE\n" + "\n".join(sorted(tsv)).replace("{", "").replace("}", "")
+    tsvFinal = "KEY\tAUTHOR+TITLE\tBIB FILE\n" + "\n".join(sorted(tsv)).replace("{", "").replace("}", "").replace('"', "")
     with open("../bibTex_%s.tsv" % var, "w", encoding="utf8") as f9:
         f9.write(tsvFinal)
 
