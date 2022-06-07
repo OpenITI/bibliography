@@ -19,11 +19,11 @@
 
 ## Adaptation to OpenITI YML files:
 
-- ASSERTION: can be given in the `COMMENT` field, especially if it has some ambiguities.
-	- SUBJECT: not coded, since the URI of the YML file is the SUBJECT
-	- PREDICATE: free vocabulary to be normalized during metadata revisions; always in first position
+- ASSERTION: can be given in the `COMMENT` field of the YML file, especially if the coded assertion has some ambiguities.
+	- SUBJECT: not coded, since the URI of the YML file is the SUBJECT; implied by the filename;
+	- PREDICATE: free vocabulary to be normalized during metadata revisions; always in first position;
 		- **format**: `englishWords[_arabicWords]?`
-	- OBJECT (OObject, OGeo, and OTime); each following a specific REGEX pattern (below); separated with commas
+	- OBJECT (OObject, OGeo, and OTime); each following a specific REGEX pattern (below); separated with commas;
 		- **format**:
 			- OObject: `AuthorURI` from OpenITI (if not in OpenITI, must be suggested using the same pattern);
 			- OGeo: `Althurayya_URI` (if not in Althurayya, must be suggested using the same pattern);
@@ -32,24 +32,19 @@
 				- `YYYY_MMM_DD::YYYY_MMM_DD` for periods; unknown elements are coded with `X`; codes for Islamic months are defined;
 	- AUTHORITY: follows a pattern;
 		- **format:** `AUTH_ContrURI`, where `ContrURI` is the unique identifier of contributors to the OpenITI project;
-		- a YML file is required for storing these `INITIALS` with detailed descriptions as values;
+		- a YML file is required for storing these `ContrURI` with detailed descriptions as values;
 	- PROVENANCE:
 		- **format:** `PROV_REFCODE`, where `REFCODE` is a URI of reference;
-		- types of references, all explained in YML file
-			- `PRI_YYMMDDHHMMSS` :: reference to a primary source, details are to be found in `bibTeX_PRI.bib`; can be given with volumes and pages, using PANDOC format
-			- `SEC_YYMMDDHHMMSS` :: reference to a secondary source, details are to be found in `bibTeX_SEC.bib`; can be given with volumes and pages, using PANDOC format
+		- types of references, all explained in the corresponding YML file;
+			- `PRI_YYMMDDHHMMSS` :: reference to a primary source, details are to be found in `*.bib` files in `./data/bibTeX_primary/` (multiple files can be added to that folder; references can also be pasted into already existing files); can be given with volumes and pages, using PANDOC format; 
+			- `SEC_YYMMDDHHMMSS` :: reference to a secondary source, details are to be found in `*.bib` files in `./data/bibTeX_secondary/` (multiple files can be added to that folder; references can also be pasted into already existing files); can be given with volumes and pages, using PANDOC format;
 			- `MSC_YYMMDDHHMMSS` :: free reference, given directly in the YML file (URLs, free-running comments, etc.)
 		- a YML file is required to collect and keep track of references:
-			- `timestamp: detailed reference`, where anything can go into detailed reference;
-
-**NB:** where do we keep these additional YML files? We can probably keep them in separate repositories and automatically format them into some kinds of HTML bibliographies that are easy to navigate online:
-	- github.com/openiti/bibliography
-	- github.com/openiti/contributors
-	
+			- `(PRI|SEC|MSC)_timestamp: detailed reference`, where anything can go into detailed reference;	
 	
 ### Coding example
 
-**Assertion**: "He had a great many excellent pupils, among whom we particularly mention ʿAbd al-Wahhāb al-Subkī, the author of the _Ṭabaḳāt al-S̲h̲āfiʿiyya al-Kubrā_ , whose father Taḳī al-Dīn al-Subkī, the famous S̲h̲āfiʿī doctor of law, was his most intimate friend. [Dhahabi was his teacher from 699 till 715 AH]". (Source: EI2)
+**Assertion**: "[al-Dhahabī] had a great many excellent pupils, among whom we particularly mention ʿAbd al-Wahhāb al-Subkī, the author of the _Ṭabaḳāt al-S̲h̲āfiʿiyya al-Kubrā_. [Dhahabi was his teacher from 699 till 715 AH]". (Source: EI2)
 
 **STAR_Record** --- packed TRIPLE with implied SUBJECT:
 
@@ -62,12 +57,16 @@
 
 #### YML CONTRIBUTORS:
 
+I chose to go with initials, but it does not really matter --- feel free to add yours.
+
 ```yml
 SBS: Sarah Bowen Savant
 MGR: Maxim G. Romanov
 ```
 
 #### YML REFERENCES
+
+
 
 ```yml
 MSC_220607114500: <http://dx.doi.org/10.1163/1573-3912_islam_COM_0159>
@@ -76,7 +75,7 @@ PRI_220607114502: 0748DhahabiTarikhIslamMacruf2003
 
 ```
 
-#### bibTeX_SEC.bib File
+#### *.bib File for secondary sources
 
 ```
 @book{MacrufDahabi1976s,
@@ -92,7 +91,7 @@ PRI_220607114502: 0748DhahabiTarikhIslamMacruf2003
 
 ```
 
-#### bibTeX_PRI.bib File
+#### *.bib File for primary sources
 
 ```
 @mvbook{0748DhahabiTarikhIslamMacruf2003,
@@ -112,5 +111,5 @@ PRI_220607114502: 0748DhahabiTarikhIslamMacruf2003
 
 #### bibTeX Key Format
 
-- `AuthorTitleYEAR` for secondary;
-- `XXXXAuthorTitleEditionYEAR` for primary, where `XXXXAuthorTitle` is the OpenITI URI `XXXXAuthor.Title`, but without a dot;
+- `AuthorTitleYEAR` for secondary sources;
+- `XXXXAuthorTitleEditionYEAR` for primary sources, where `XXXXAuthorTitle` is the OpenITI URI `XXXXAuthor.Title`, but without a dot;
