@@ -6,7 +6,7 @@ pathToSec = "../data/bibTeX_secondary/"
 targetBibPath = "../bibFiles/"
 targetBibLink = "https://github.com/OpenITI/bibliography/blob/main/bibFiles/"
 
-import os, re, sys
+import os, re, sys, unicodedata
 
 primaryBibs = os.listdir(pathToPri)
 secondaryBibs = os.listdir(pathToSec)
@@ -104,9 +104,10 @@ def procesBib(bibTexFolder, var):
     for k,v in bibDicFiltered.items():
         aKEY = k
         if "author" in v:
-            aREAD = v["author"] + " — " + v["title"]
+            aREAD = v["author"] + " --- " + v["title"]
         else:
-            aREAD = "NO AUTHOR" + " — " + v["title"]
+            aREAD = "NO AUTHOR" + " --- " + v["title"]
+        aREAD = unicodedata.normalize('NFKD', aREAD).encode('ascii', 'ignore').decode('utf8')
         aBIBFILE = targetBibLink + aKEY + ".bib"
 
         tsv.append("%s\t%s\t%s" % (aKEY, aREAD, aBIBFILE))
