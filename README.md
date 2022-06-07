@@ -1,8 +1,20 @@
 # bibliography
 
-- Bibliography of the OpenITI Project (primary and secondary sources)
-- URIs of contributors for AUTHORITY statements
-- URIs of references for PROVENANCE statements
+In fact, this is a little more than just a bibliography. This repository is to keep track of:
+
+- bibliography of primary and secondary sources;
+- identifiers of contributors;
+
+# Structure
+
+- `./bibFiles/` :: bib files for individual records, named using their bibTeX keys; automatically generated from large bibTeX files added to `./data/bibTeX_primary/` and `./data/bibTeX_secondary/`.
+- `./data/` :: subfolders `./data/bibTeX_primary/` and `./data/bibTeX_secondary/` for uploading large bibTeX files;
+- `./scripts/` :: contains `split_bib_files.py` script that parses large bibliographies into individual bib files and aggregates browsable `bibTex_pri.tsv` and `bibTex_sec.tsv` files;
+- `bibTex_pri.tsv` can be used to find a reference to a primary source; generated automatically;
+- `bibTex_sec.tsv` can be used to find a reference to a secondary source; generated automatically;
+- `contributors.yml` file for keeping track of contributor URIs; can be edited directly on github;
+- `references.yml` file to keep track of references; can be edited directly on github;
+- `README.md` is this file;
 
 
 ## STAR-like Assertions
