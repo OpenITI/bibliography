@@ -40,7 +40,7 @@ def splitBibs(path, var):
                                 with open(targetBibPath + key + ".bib", "w", encoding="utf8") as f9:
                                     f9.write(bib)
 
-                                csv.append("%s,%s%s" % (key, targetBibLink, key+".bib"))
+                                csv.append("%s\t%s%s" % (key, targetBibLink, key+".bib"))
 
     csv = "bibTeX Key, Link to bibTeX File\n" + "\n".join(sorted(csv))
     with open("../bibTex_%s.csv" % var, "w", encoding="utf8") as f9:
@@ -57,5 +57,5 @@ def convertYML(ymlFile):
         with open("../" + ymlFile.replace(".yml", ".csv"), "w", encoding="utf8") as f9:
             f9.write("KEY,VALUE\n" + data)
 
-convertYML("contributors.yml")
-convertYML("references.yml")
+#convertYML("contributors.yml")
+#convertYML("references.yml")
