@@ -45,7 +45,7 @@ def splitBibs(path, var):
                                 csv.append("%s%s%s%s" % (key, csvConnector, targetBibLink, key+".bib"))
 
     csv = "bibTeX Key%sLink to bibTeX File\n" % csvConnector + "\n".join(sorted(csv))
-    with open("../bibTex_%s.csv" % var, "w", encoding="utf8") as f9:
+    with open("../bibTex_%s.tsv" % var, "w", encoding="utf8") as f9:
         f9.write(csv)
 
 
