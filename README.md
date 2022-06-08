@@ -46,8 +46,8 @@ In fact, this is a little more than just a bibliography. This repository is to k
 		- **format:** `AUTH_ContrURI`, where `ContrURI` is the unique identifier of contributors to the OpenITI project;
 		- a YML file is required for storing these `ContrURI` with detailed descriptions as values;
 	- PROVENANCE (*alternative*):
-		- **format:** `PROV_TIMESTAMP`, where `TIMESTAMP` has the format of `YYMMDDHHMMSS` to guarantee uniqueness;
-		- `PROV_(\d){12}` (example: `PROV_220607114500`, where `220607114500` is a timestamp of YYMMDDHHMMSS to guarantee uniqueness) :: detailed reference is given in `references.yml` file.
+		- **format:**:
+			- `PROV_(\d){12}` (example: `PROV_220607114500`, where `220607114500` is a timestamp of YYMMDDHHMMSS to guarantee uniqueness) :: detailed reference is given in `references.yml` file.
 		- `reference.yml` contains detailed information (see below);	
 	
 
