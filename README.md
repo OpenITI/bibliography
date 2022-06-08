@@ -19,7 +19,7 @@ In fact, this is a little more than just a bibliography. This repository is to k
 
 ## STAR-like Assertions
 
-- the idea is from Tara Andrews: instead of traditional SPO model, we may benefit from using a "structured assertion record" (the proposed CDOC-CRM standard is too complex though for collecting data):
+- the idea is from Tara Andrews (<https://releven.univie.ac.at/>, ERC Consolidator Grant #101002357): instead of traditional SPO model, we may benefit from using a "structured assertion record" (the proposed CDOC-CRM standard is too complex though for collecting data):
 	- ASSERTION:
 		- SUBJECT
 		- PREDICATE
@@ -45,49 +45,74 @@ In fact, this is a little more than just a bibliography. This repository is to k
 	- AUTHORITY: follows a pattern;
 		- **format:** `AUTH_ContrURI`, where `ContrURI` is the unique identifier of contributors to the OpenITI project;
 		- a YML file is required for storing these `ContrURI` with detailed descriptions as values;
-	- PROVENANCE:
-		- **format:** `PROV_REFCODE`, where `REFCODE` is a URI of reference;
-		- types of references, all explained in the corresponding YML file;
-			- `PRI_YYMMDDHHMMSS` :: reference to a primary source, details are to be found in `*.bib` files in `./data/bibTeX_primary/` (multiple files can be added to that folder; references can also be pasted into already existing files); can be given with volumes and pages, using PANDOC format; 
-			- `SEC_YYMMDDHHMMSS` :: reference to a secondary source, details are to be found in `*.bib` files in `./data/bibTeX_secondary/` (multiple files can be added to that folder; references can also be pasted into already existing files); can be given with volumes and pages, using PANDOC format;
-			- `MSC_YYMMDDHHMMSS` :: free reference, given directly in the YML file (URLs, free-running comments, etc.)
-		- a YML file is required to collect and keep track of references:
-			- `(PRI|SEC|MSC)_timestamp: detailed reference`, where anything can go into detailed reference;	
+	- PROVENANCE (*alternative*):
+		- **format:** `PROV_TIMESTAMP`, where `TIMESTAMP` has the format of `YYMMDDHHMMSS` to guarantee uniqueness;
+		- `PROV_(\d){12}` (example: `PROV_220607114500`, where `220607114500` is a timestamp of YYMMDDHHMMSS to guarantee uniqueness) :: detailed reference is given in `references.yml` file.
+		- `reference.yml` contains detailed information (see below);	
 	
+
+<!--
+	- PROVENANCE:
+		- **format:** `PROV_REFCODE`, where `REFCODE` can belong to one of three types (REGEX patterns);
+		- types of references, all explained in the corresponding YML file;
+			- `PROV_(\d){4}[A-Z]uthorTitleEditionYYYY` (example: `0748DhahabiTarikhIslamMacruf2003`):: reference to a primary source, details are to be found in `*.bib` files in `./data/bibTeX_primary/` (multiple files can be added to that folder; references can also be pasted into already existing files); can be given with volumes and pages, using PANDOC format; 
+			- `PROV_[A-Za-z]+(\d+)?` (example: `MacrufDahabi1976`) :: reference to a secondary source, details are to be found in `*.bib` files in `./data/bibTeX_secondary/` (multiple files can be added to that folder; references can also be pasted into already existing files); can be given with volumes and pages, using PANDOC format;
+			- `PROV_(\d){12}` (example: `PROV_220607114500`, where `220607114500` is a timestamp of YYMMDDHHMMSS) :: free reference, given directly in `references.yml` file (URLs, free-running comments, etc.)
+		- a YML file is required to collect and keep track of the third type of references:
+			- `PROV_TIMESTAMP: detailed reference`, where anything can go into detailed reference;	
+-->
+
 ### Coding example
 
-**Assertion**: "[al-Dhahabī] had a great many excellent pupils, among whom we particularly mention ʿAbd al-Wahhāb al-Subkī, the author of the _Ṭabaḳāt al-S̲h̲āfiʿiyya al-Kubrā_. [Dhahabi was his teacher from 699 till 715 AH]". (Source: EI2)
+**TEXT**: ʿAbd al-Wahhāb al-Subkī, the author of the *Ṭabaḳāt al-Šāfiʿiyyaŧ al-Kubrá*, was among al-Ḏahabī’s students. Under his tutelage, al-Subkī studied *fiqh* (*tafaqqaha ʿalay-hi*) from 699 till 715 AH. (Source: a made-up example, REF MSC_220607114500).
 
-**STAR_Record** --- packed TRIPLE with implied SUBJECT:
+**Assertion**: al-Ḏahabī was a teacher (*tafaqqaha ʿalay-hi*) of al-Subkī during 699-715 AH. 
 
-`teacherOf_tafaqqahaCalayhi@0771Subki,DIMASHQ_363E335N_S,699_XXX_XX::715_XXX_XX@AUTH_MGR@MSC_220607114500,SEC_220607114501,PRIV_220607114502`
+**STAR-like Record** (a packed TRIPLE with implied SUBJECT?):
+
+`teacherOf_tafaqqahaCalayhi@0771Subki,DIMASHQ_363E335N_S,699_XXX_XX::715_XXX_XX@AUTH_MGR@MSC_220607114500`
 
 - SUBJECT is implied by the NAME of the YML file; 
 - the PREDICATE is always in the first position;
-- OBJECTS: follow specific patterns; omitted if not known;
+- OBJECTS (O, G, T): follow specific patterns; some may be omitted if not known;
 - AUTH and MSC/PRI/SEC may be omitted;
 
 #### YML CONTRIBUTORS:
 
-I chose to go with initials, but it does not really matter --- feel free to add yours.
+I chose to go with initials, but it does not really matter --- feel free to add yours. BTW, we can use our github accounts for our URIs.
 
 ```yml
 SBS: Sarah Bowen Savant
 MGR: Maxim G. Romanov
 ```
 
-#### YML REFERENCES
-
-
+*Alternatively (using our GitHub Accounts):*
 
 ```yml
-MSC_220607114500: <http://dx.doi.org/10.1163/1573-3912_islam_COM_0159>
-SEC_220607114501: MacrufDahabi1976s, 45
-PRI_220607114502: 0748DhahabiTarikhIslamMacruf2003
-
+sarahkitab: Sarah Bowen Savant
+aslishah: Aslisho Qurboniev
+hamidrh66: Hamid Reza Hakimi
+gowaart: Gowaart Van Den Bossche
+mabarber92: Mathew Barber
+pverkind: Peter Verkinderen
+lrnzmtths: Lorenz Nigst
+masoumeh: Masoumeh Seydi
+mutherr: Ryan Muther
+sohailmerchant: Sohail Merchant
+maximromanov: Maxim Romanov
 ```
 
-#### *.bib File for secondary sources
+#### YML REFERENCES
+
+```yml
+PROV_220607114500: <http://dx.doi.org/10.1163/1573-3912_islam_COM_0159>
+PROV_220607114501: MacrufDahabi1976s, 45
+PROV_220607114502: 0748DhahabiTarikhIslamMacruf2003
+```
+
+#### .bib Files for secondary sources
+
+each file may contain a singe or multiple records
 
 ```
 @book{MacrufDahabi1976s,
@@ -100,10 +125,11 @@ PRI_220607114502: 0748DhahabiTarikhIslamMacruf2003
   location = {{al-Qāhiraŧ}},
   langid = {arabic},
 }
-
 ```
 
-#### *.bib File for primary sources
+#### .bib Files for primary sources
+
+each file may contain a singe or multiple records
 
 ```
 @mvbook{0748DhahabiTarikhIslamMacruf2003,
@@ -118,7 +144,6 @@ PRI_220607114502: 0748DhahabiTarikhIslamMacruf2003
   langid = {arabic},
   volumes = {17},
 }
-
 ```
 
 #### bibTeX Key Format
@@ -132,7 +157,26 @@ PRI_220607114502: 0748DhahabiTarikhIslamMacruf2003
 ### AUTHOR
 
 ```yml
-
+00#AUTH#URI######: 0748Dhahabi
+10#AUTH#DESCRIPT#: historian, theologian, hadith-expert, biographer
+10#AUTH#ISM####AR: Muḥammad
+10#AUTH#KUNYA##AR: Abū ʿAbd Allãh
+10#AUTH#LAQAB##AR: Šams al-dīn
+10#AUTH#NASAB##AR: b. ʿUṯmān b. Qāymāẓ b. ʿAbd Allãh
+10#AUTH#NISBA##AR: al-Turkumānī, al-Fāriqī, al-Dimašqī, al-Šāfiʿī, al-Muʾarriḫ, al-Ḥāfiẓ, al-Ḏahabī
+10#AUTH#SHUHRA#AR: al-Ḏahabī
+11#AUTH#ISM####AR: محمد
+11#AUTH#KUNYA##AR: أبو عبد الله
+11#AUTH#LAQAB##AR: شمس الدين
+11#AUTH#NASAB##AR: بن عثمان بن قايماظ بن عبد الله
+11#AUTH#NISBA##AR: التركماني، الفارقي، الدمشقي، الشافعي، المؤرخ، الحافظ، الذهبي
+11#AUTH#SHUHRA#AR: الذهبي
+20#AUTH#EVENTS###:
+    born@DIMASHQ_363E335N_S@673_RA2_01@AUTH_MGR@MSC_220607114500, born@MAYYAFARIQIN_410E381N_S@AUTH_MGR@MSC_220607114500, died@DIMASHQ_363E335N_S@AUTH_MGR@MSC_220607114500, born@673_RA2_01@AUTH_MGR@MSC_220607114500, born@673_RA2_03@AUTH_MGR@MSC_220607114500, born@673_RA1_01@AUTH_MGR@MSC_220607114500, born@673_RA1_03@AUTH_MGR@MSC_220607114500, died@748_DHQ_03@AUTH_MGR@MSC_220607114500, died@753_XXX_XX@AUTH_MGR@MSC_220607114500, resided@DIMASHQ_363E335N_S@AUTH_MGR@MSC_220607114500, visited@FUSTAT_312E300N_S@AUTH_MGR@MSC_220607114500, visited@QAHIRA_312E300N_S@AUTH_MGR@MSC_220607114500, visited@Misr_RE@AUTH_MGR@MSC_220607114500, visited@Sham_RE@AUTH_MGR@MSC_220607114500, visited@MAKKA_398E213N_S@AUTH_MGR@MSC_220607114500, visited@ISKANDARIYYA_299E311N_S@AUTH_MGR@MSC_220607114500
+40#AUTH#RELATED##: teacherOf@0771Subki@AUTH_MGR@MSC_220607114500
+80#AUTH#BIBLIO###: bibTeX@SayhAlHafiz1994
+90#AUTH#COMMENT##:
+    "(From EI2) al-Ḏh̲ahabī, S̲h̲ams al-Dīn Abū ʿAbd Allāh Muḥammad b. ʿUt̲h̲mān b. Ḳāymāẓ b. ʿAbd Allāh al-Turkumānī al-Fāriḳī al-Dimas̲h̲ḳī al-S̲h̲āfiʿī, an Arab historian and theologian, was born at Damascus or at Mayyāfariḳīn on 1 or 3 Rabīʿ II (according to al-Kutubī, in Rabīʿ I) 673/5 or 7 October 1274, and died at Damascus, according to al-Subkī and al-Suyūṭī, in the night of Sunday-Monday on 3 D̲h̲u ’l-Ḳaʿda 748/4 February 1348, or, according to Aḥmad b. ʿIyās, in 753/1352-3. (Note: this is the basis for the encoded data, which in REFERENCES.YML file will be recorded as `MSC_220607114500: http://dx.doi.org/10.1163/1573-3912_islam_COM_0159`)"
 ```
 
 ### WORK
