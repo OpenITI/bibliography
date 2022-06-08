@@ -64,7 +64,7 @@ In fact, this is a little more than just a bibliography. This repository is to k
 
 ### Coding example
 
-**TEXT**: ʿAbd al-Wahhāb al-Subkī, the author of the *Ṭabaḳāt al-Šāfiʿiyyaŧ al-Kubrá*, was among al-Ḏahabī’s students. Under his tutelage, al-Subkī studied *fiqh* (*tafaqqaha ʿalay-hi*) from 699 till 715 AH. (Source: a made-up example, REF MSC_220607114500).
+**TEXT**: ʿAbd al-Wahhāb al-Subkī, the author of the *Ṭabaḳāt al-Šāfiʿiyyaŧ al-Kubrá*, was among al-Ḏahabī’s students. Under his tutelage, al-Subkī studied *fiqh* (*tafaqqaha ʿalay-hi*) from 699 till 715 AH. (Source: a made-up example, REF PROV_220607114500).
 
 **Assertion**: al-Ḏahabī was a teacher (*tafaqqaha ʿalay-hi*) of al-Subkī during 699-715 AH. 
 
@@ -105,6 +105,7 @@ maximromanov: Maxim Romanov
 #### YML REFERENCES
 
 ```yml
+PROV_220607114500: my made-up example
 PROV_220607114500: <http://dx.doi.org/10.1163/1573-3912_islam_COM_0159>
 PROV_220607114501: MacrufDahabi1976s, 45
 PROV_220607114502: 0748DhahabiTarikhIslamMacruf2003
