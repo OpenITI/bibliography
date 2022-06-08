@@ -125,3 +125,24 @@ PRI_220607114502: 0748DhahabiTarikhIslamMacruf2003
 
 - `AuthorTitleYEAR` for secondary sources;
 - `XXXXAuthorTitleEditionYEAR` for primary sources, where `XXXXAuthorTitle` is the OpenITI URI `XXXXAuthor.Title`, but without a dot;
+
+
+## YML EXAMPLES
+
+### AUTHOR
+
+```yml
+
+```
+
+### WORK
+
+```yml
+
+```
+
+### MANIFESTATION
+
+```yml
+
+```
