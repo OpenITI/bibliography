@@ -173,14 +173,17 @@ each file may contain either a singe or multiple records
 11#AUTH#NISBA##AR: التركماني، الفارقي، الدمشقي، الشافعي، المؤرخ، الحافظ، الذهبي
 11#AUTH#SHUHRA#AR: الذهبي
 20#AUTH#EVENTS###:
-    born@DIMASHQ_363E335N_S@673_RA2_01@AUTH_MGR@MSC_220607114500, born@MAYYAFARIQIN_410E381N_S@AUTH_MGR@MSC_220607114500, died@DIMASHQ_363E335N_S@AUTH_MGR@MSC_220607114500,
+    born@DIMASHQ_363E335N_S@673_RA2_01@AUTH_MGR@MSC_220607114500,
+    born@MAYYAFARIQIN_410E381N_S@AUTH_MGR@MSC_220607114500,
+    died@DIMASHQ_363E335N_S@AUTH_MGR@MSC_220607114500,
     born@673_RA2_01@AUTH_MGR@MSC_220607114500,
     born@673_RA2_03@AUTH_MGR@MSC_220607114500,
     born@673_RA1_01@AUTH_MGR@MSC_220607114500,
     born@673_RA1_03@AUTH_MGR@MSC_220607114500,
     died@748_DHQ_03@AUTH_MGR@MSC_220607114500,
     died@753_XXX_XX@AUTH_MGR@MSC_220607114500,
-    resided@DIMASHQ_363E335N_S@AUTH_MGR@MSC_220607114500, visited@FUSTAT_312E300N_S@AUTH_MGR@MSC_220607114500,
+    resided@DIMASHQ_363E335N_S@AUTH_MGR@MSC_220607114500,
+    visited@FUSTAT_312E300N_S@AUTH_MGR@MSC_220607114500,
     visited@QAHIRA_312E300N_S@AUTH_MGR@MSC_220607114500,
     visited@Misr_RE@AUTH_MGR@MSC_220607114500,
     visited@Sham_RE@AUTH_MGR@MSC_220607114500,
@@ -188,7 +191,15 @@ each file may contain either a singe or multiple records
 40#AUTH#RELATED##: teacherOf@0771Subki@AUTH_MGR@MSC_220607114500
 80#AUTH#BIBLIO###: bibTeX@SayhAlHafiz1994
 90#AUTH#COMMENT##:
-    "(From EI2) al-Ḏh̲ahabī, S̲h̲ams al-Dīn Abū ʿAbd Allāh Muḥammad b. ʿUt̲h̲mān b. Ḳāymāẓ b. ʿAbd Allāh al-Turkumānī al-Fāriḳī al-Dimas̲h̲ḳī al-S̲h̲āfiʿī, an Arab historian and theologian, was born at Damascus or at Mayyāfariḳīn on 1 or 3 Rabīʿ II (according to al-Kutubī, in Rabīʿ I) 673/5 or 7 October 1274, and died at Damascus, according to al-Subkī and al-Suyūṭī, in the night of Sunday-Monday on 3 D̲h̲u ’l-Ḳaʿda 748/4 February 1348, or, according to Aḥmad b. ʿIyās, in 753/1352-3. (Note: this is the basis for the encoded data, which in REFERENCES.YML file will be recorded as `MSC_220607114500: http://dx.doi.org/10.1163/1573-3912_islam_COM_0159`)"
+    "(From EI2) al-Ḏh̲ahabī, S̲h̲ams al-Dīn Abū ʿAbd Allāh Muḥammad b. ʿUt̲h̲mān b.
+    Ḳāymāẓ b. ʿAbd Allāh al-Turkumānī al-Fāriḳī al-Dimas̲h̲ḳī al-S̲h̲āfiʿī, an Arab
+    historian and theologian, was born at Damascus or at Mayyāfariḳīn on 1 or 3
+    Rabīʿ II (according to al-Kutubī, in Rabīʿ I) 673/5 or 7 October 1274, and
+    died at Damascus, according to al-Subkī and al-Suyūṭī, in the night of
+    Sunday-Monday on 3 D̲h̲u ’l-Ḳaʿda 748/4 February 1348, or, according to Aḥmad b.
+    ʿIyās, in 753/1352-3. (Note: this is the basis for the encoded data, which
+    in REFERENCES.YML file will be recorded as `MSC_220607114500:
+    http://dx.doi.org/10.1163/1573-3912_islam_COM_0159`)"
 ```
 
 ### WORK
@@ -204,10 +215,13 @@ each file may contain either a singe or multiple records
     finished@DIMASHQ_363E335N_S,XXXX_RAM_XX@AUTH_MGR@PROV_MacrufDahabi1976
 50#BOOK#RELATED##: continuedBy_dhayl@0748Dhahabi.DhaylTarikhIslam
 80#BOOK#EDITIONS#:
-    oclc@38216380, oclc@478192231, oclc@20774545, bibTeX@0748DhahabiTarikhIslamMacruf2003, bibTeX@0748DhahabiTarikhIslamTadmuri1990
+    oclc@38216380, oclc@478192231, oclc@20774545,
+    bibTeX@0748DhahabiTarikhIslamMacruf2003,
+    bibTeX@0748DhahabiTarikhIslamTadmuri1990
 80#BOOK#MSS######: oclc@871671017, oclc@45631709
 80#BOOK#STUDIES##:
-    oclc@470018644, oclc@4795854125, oclc@6015285849, oclc@6015505776, bibTeX@DeSomogyiAdhDhahabi1936, bibTeX@DeSomogyiTarikh1932, bibTeX@MacrufDahabi1976
+    oclc@470018644, oclc@4795854125, oclc@6015285849, oclc@6015505776,
+    bibTeX@DeSomogyiAdhDhahabi1936, bibTeX@DeSomogyiTarikh1932, bibTeX@MacrufDahabi1976
 80#BOOK#TRANSLAT#: no translations
 90#BOOK#COMMENT##: "No comments at the moment."
 ```
@@ -221,10 +235,13 @@ each file may contain either a singe or multiple records
 80#VERS#BASED####: oclc@793504062, bibTeX@0748DhahabiTarikhIslamMacruf2003
 80#VERS#COLLATED#: oclc@793504062, bibTeX@0748DhahabiTarikhIslamMacruf2003
 80#VERS#LINKS####:
-    https://archive.org/details/FP105731/, https://historyofislam.github.io/?/0748Dhahabi/TarikhIslam/BY2003BCM01-ara1/V00P0000
+    https://archive.org/details/FP105731/,
+    https://historyofislam.github.io/?/0748Dhahabi/TarikhIslam/BY2003BCM01-ara1/V00P0000
 90#VERS#ANNOTATOR: MGR
 90#VERS#COMMENT##:
-    "The texts is of high quality; because of how the text was stored in Shamela, page numbers are often repeated; the pagination formatting still needs to be fixed (there are more page numbers than there should be)."
+    "The texts is of high quality; because of how the text was stored
+    in Shamela, page numbers are often repeated; the pagination formatting
+    still needs to be fixed (there are more page numbers than there should be)."
 90#VERS#DATE#####: 2019-09-30
 90#VERS#ISSUES###: PAGINATION
 ```
