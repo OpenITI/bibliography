@@ -77,82 +77,6 @@ In fact, this is a little more than just a bibliography. This repository is to k
 - OBJECTS (O, G, T): follow specific patterns; some may be omitted if not known;
 - AUTH and MSC/PRI/SEC may be omitted;
 
-#### YML CONTRIBUTORS:
-
-I chose to go with initials, but it does not really matter --- feel free to add yours. BTW, we can use our github accounts for our URIs.
-
-```yml
-SBS: Sarah Bowen Savant
-MGR: Maxim G. Romanov
-```
-
-*Alternatively (using our GitHub Accounts):*
-
-```yml
-sarahkitab: Sarah Bowen Savant
-aslishah: Aslisho Qurboniev
-hamidrh66: Hamid Reza Hakimi
-gowaart: Gowaart Van Den Bossche
-mabarber92: Mathew Barber
-pverkind: Peter Verkinderen
-lrnzmtths: Lorenz Nigst
-masoumeh: Masoumeh Seydi
-mutherr: Ryan Muther
-sohailmerchant: Sohail Merchant
-maximromanov: Maxim Romanov
-```
-
-#### YML REFERENCES
-
-```yml
-PROV_220607114500: <http://dx.doi.org/10.1163/1573-3912_islam_COM_0159>
-PROV_220607114501: MacrufDahabi1976s, 45
-PROV_220607114502: 0748DhahabiTarikhIslamMacruf2003
-PROV_220607114503: my made-up example
-```
-
-#### .bib Files for secondary sources
-
-each file may contain either a singe or multiple records
-
-```
-@book{MacrufDahabi1976s,
-  title = {al-{{Ḏahabī}} wa-manhaju-hu fī kitābi-hi \textit{{{Taʾrīḫ}} al-{{Islām}}}},
-  shorttitle = {al-{{Ḏahabī}} wa-manhaju-hu},
-  author = {Maʿrūf, Baššār ʿAwwād},
-  year = 1976,
-  edition = {al-Ṭabʿaŧ al-ūlá},
-  publisher = {{Maṭbaʿaŧ ʿĪsá al-Bābī al-Ḥalabī}},
-  location = {{al-Qāhiraŧ}},
-  langid = {arabic},
-}
-```
-
-#### .bib Files for primary sources
-
-each file may contain either a singe or multiple records
-
-```
-@mvbook{0748DhahabiTarikhIslamMacruf2003,
-  title = {Taʾrīḫ al-islām wa-wafayāt al-mašāhīr wa-al-aʿlām},
-  shorttitle = {Taʾrīḫ al-islām (Maʿrūf)},
-  author = {{Ḏahabī (al-)}},
-  editor = {Maʿrūf, Baššār ʿAwwād},
-  date = {2003},
-  edition = {1},
-  publisher = {{Dār al-Ġarb al-Islāmī}},
-  location = {{Bayrūt}},
-  langid = {arabic},
-  volumes = {17},
-}
-```
-
-#### bibTeX Key Format
-
-- `AuthorTitleYEAR` for secondary sources;
-- `XXXXAuthorTitleEditionYEAR` for primary sources, where `XXXXAuthorTitle` is the OpenITI URI `XXXXAuthor.Title`, but without a dot;
-
-
 ## YML EXAMPLES
 
 ### AUTHOR
@@ -246,3 +170,78 @@ each file may contain either a singe or multiple records
 90#VERS#DATE#####: 2019-09-30
 90#VERS#ISSUES###: PAGINATION
 ```
+
+#### YML CONTRIBUTORS:
+
+I chose to go with initials, but it does not really matter --- feel free to add yours. BTW, we can use our github accounts for our URIs.
+
+```yml
+SBS: Sarah Bowen Savant
+MGR: Maxim G. Romanov
+```
+
+*Alternatively (using our GitHub Accounts):*
+
+```yml
+sarahkitab: Sarah Bowen Savant
+aslishah: Aslisho Qurboniev
+hamidrh66: Hamid Reza Hakimi
+gowaart: Gowaart Van Den Bossche
+mabarber92: Mathew Barber
+pverkind: Peter Verkinderen
+lrnzmtths: Lorenz Nigst
+masoumeh: Masoumeh Seydi
+mutherr: Ryan Muther
+sohailmerchant: Sohail Merchant
+maximromanov: Maxim Romanov
+```
+
+#### YML REFERENCES
+
+```yml
+PROV_220607114500: <http://dx.doi.org/10.1163/1573-3912_islam_COM_0159>
+PROV_220607114501: MacrufDahabi1976s, 45
+PROV_220607114502: 0748DhahabiTarikhIslamMacruf2003
+PROV_220607114503: my made-up example
+```
+
+#### .bib Files for secondary sources
+
+each file may contain either a singe or multiple records
+
+```
+@book{MacrufDahabi1976s,
+  title = {al-{{Ḏahabī}} wa-manhaju-hu fī kitābi-hi \textit{{{Taʾrīḫ}} al-{{Islām}}}},
+  shorttitle = {al-{{Ḏahabī}} wa-manhaju-hu},
+  author = {Maʿrūf, Baššār ʿAwwād},
+  year = 1976,
+  edition = {al-Ṭabʿaŧ al-ūlá},
+  publisher = {{Maṭbaʿaŧ ʿĪsá al-Bābī al-Ḥalabī}},
+  location = {{al-Qāhiraŧ}},
+  langid = {arabic},
+}
+```
+
+#### .bib Files for primary sources
+
+each file may contain either a singe or multiple records
+
+```
+@mvbook{0748DhahabiTarikhIslamMacruf2003,
+  title = {Taʾrīḫ al-islām wa-wafayāt al-mašāhīr wa-al-aʿlām},
+  shorttitle = {Taʾrīḫ al-islām (Maʿrūf)},
+  author = {{Ḏahabī (al-)}},
+  editor = {Maʿrūf, Baššār ʿAwwād},
+  date = {2003},
+  edition = {1},
+  publisher = {{Dār al-Ġarb al-Islāmī}},
+  location = {{Bayrūt}},
+  langid = {arabic},
+  volumes = {17},
+}
+```
+
+#### bibTeX Key Format
+
+- `AuthorTitleYEAR` for secondary sources;
+- `XXXXAuthorTitleEditionYEAR` for primary sources, where `XXXXAuthorTitle` is the OpenITI URI `XXXXAuthor.Title`, but without a dot;
