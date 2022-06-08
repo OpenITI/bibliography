@@ -64,13 +64,13 @@ In fact, this is a little more than just a bibliography. This repository is to k
 
 ### Coding example
 
-**TEXT**: ʿAbd al-Wahhāb al-Subkī, the author of the *Ṭabaḳāt al-Šāfiʿiyyaŧ al-Kubrá*, was among al-Ḏahabī’s students. Under his tutelage, al-Subkī studied *fiqh* (*tafaqqaha ʿalay-hi*) from 699 till 715 AH. (Source: a made-up example, REF PROV_220607114500).
+**TEXT**: ʿAbd al-Wahhāb al-Subkī, the author of the *Ṭabaḳāt al-Šāfiʿiyyaŧ al-Kubrá*, was among al-Ḏahabī’s students. Under his tutelage, al-Subkī studied *fiqh* (*tafaqqaha ʿalay-hi*) from 699 till 715 AH. (Source: a made-up example, REF `PROV_220607114503`).
 
 **Assertion**: al-Ḏahabī was a teacher (*tafaqqaha ʿalay-hi*) of al-Subkī during 699-715 AH. 
 
 **STAR-like Record** (a packed TRIPLE with implied SUBJECT?):
 
-`teacherOf_tafaqqahaCalayhi@0771Subki,DIMASHQ_363E335N_S,699_XXX_XX::715_XXX_XX@AUTH_MGR@MSC_220607114500`
+`teacherOf_tafaqqahaCalayhi@0771Subki,DIMASHQ_363E335N_S,699_XXX_XX::715_XXX_XX@AUTH_MGR@PROV_220607114503`
 
 - SUBJECT is implied by the NAME of the YML file; 
 - the PREDICATE is always in the first position;
@@ -105,15 +105,15 @@ maximromanov: Maxim Romanov
 #### YML REFERENCES
 
 ```yml
-PROV_220607114500: my made-up example
+PROV_220607114500: <http://dx.doi.org/10.1163/1573-3912_islam_COM_0159>
 PROV_220607114501: MacrufDahabi1976s, 45
 PROV_220607114502: 0748DhahabiTarikhIslamMacruf2003
-PROV_220607114503: <http://dx.doi.org/10.1163/1573-3912_islam_COM_0159>
+PROV_220607114503: my made-up example
 ```
 
 #### .bib Files for secondary sources
 
-each file may contain a singe or multiple records
+each file may contain either a singe or multiple records
 
 ```
 @book{MacrufDahabi1976s,
@@ -130,7 +130,7 @@ each file may contain a singe or multiple records
 
 #### .bib Files for primary sources
 
-each file may contain a singe or multiple records
+each file may contain either a singe or multiple records
 
 ```
 @mvbook{0748DhahabiTarikhIslamMacruf2003,
@@ -173,7 +173,18 @@ each file may contain a singe or multiple records
 11#AUTH#NISBA##AR: التركماني، الفارقي، الدمشقي، الشافعي، المؤرخ، الحافظ، الذهبي
 11#AUTH#SHUHRA#AR: الذهبي
 20#AUTH#EVENTS###:
-    born@DIMASHQ_363E335N_S@673_RA2_01@AUTH_MGR@MSC_220607114500, born@MAYYAFARIQIN_410E381N_S@AUTH_MGR@MSC_220607114500, died@DIMASHQ_363E335N_S@AUTH_MGR@MSC_220607114500, born@673_RA2_01@AUTH_MGR@MSC_220607114500, born@673_RA2_03@AUTH_MGR@MSC_220607114500, born@673_RA1_01@AUTH_MGR@MSC_220607114500, born@673_RA1_03@AUTH_MGR@MSC_220607114500, died@748_DHQ_03@AUTH_MGR@MSC_220607114500, died@753_XXX_XX@AUTH_MGR@MSC_220607114500, resided@DIMASHQ_363E335N_S@AUTH_MGR@MSC_220607114500, visited@FUSTAT_312E300N_S@AUTH_MGR@MSC_220607114500, visited@QAHIRA_312E300N_S@AUTH_MGR@MSC_220607114500, visited@Misr_RE@AUTH_MGR@MSC_220607114500, visited@Sham_RE@AUTH_MGR@MSC_220607114500, visited@MAKKA_398E213N_S@AUTH_MGR@MSC_220607114500, visited@ISKANDARIYYA_299E311N_S@AUTH_MGR@MSC_220607114500
+    born@DIMASHQ_363E335N_S@673_RA2_01@AUTH_MGR@MSC_220607114500, born@MAYYAFARIQIN_410E381N_S@AUTH_MGR@MSC_220607114500, died@DIMASHQ_363E335N_S@AUTH_MGR@MSC_220607114500,
+    born@673_RA2_01@AUTH_MGR@MSC_220607114500,
+    born@673_RA2_03@AUTH_MGR@MSC_220607114500,
+    born@673_RA1_01@AUTH_MGR@MSC_220607114500,
+    born@673_RA1_03@AUTH_MGR@MSC_220607114500,
+    died@748_DHQ_03@AUTH_MGR@MSC_220607114500,
+    died@753_XXX_XX@AUTH_MGR@MSC_220607114500,
+    resided@DIMASHQ_363E335N_S@AUTH_MGR@MSC_220607114500, visited@FUSTAT_312E300N_S@AUTH_MGR@MSC_220607114500,
+    visited@QAHIRA_312E300N_S@AUTH_MGR@MSC_220607114500,
+    visited@Misr_RE@AUTH_MGR@MSC_220607114500,
+    visited@Sham_RE@AUTH_MGR@MSC_220607114500,
+    visited@MAKKA_398E213N_S@AUTH_MGR@MSC_220607114500, visited@ISKANDARIYYA_299E311N_S@AUTH_MGR@MSC_220607114500
 40#AUTH#RELATED##: teacherOf@0771Subki@AUTH_MGR@MSC_220607114500
 80#AUTH#BIBLIO###: bibTeX@SayhAlHafiz1994
 90#AUTH#COMMENT##:
@@ -183,11 +194,37 @@ each file may contain a singe or multiple records
 ### WORK
 
 ```yml
-
+00#BOOK#URI######: 0748Dhahabi.TarikhIslam
+10#BOOK#GENRES###: GAL@geschichte, MGR@obituaryChronicle
+10#BOOK#TITLEA#AR: Taʾrīḫ al-islām
+10#BOOK#TITLEB#AR: Taʾrīḫ al-islām wa-ṭabaqāt al-mašāhīr wa-l-aʿlām
+11#BOOK#TITLEA#AR: تأريخ الإسلام
+11#BOOK#TITLEB#AR: تأريخ الإسلام وطبقات المشاهير والأعلام
+20#BOOK#EVENTS###:
+    finished@DIMASHQ_363E335N_S,XXXX_RAM_XX@AUTH_MGR@PROV_MacrufDahabi1976
+50#BOOK#RELATED##: continuedBy_dhayl@0748Dhahabi.DhaylTarikhIslam
+80#BOOK#EDITIONS#:
+    oclc@38216380, oclc@478192231, oclc@20774545, bibTeX@0748DhahabiTarikhIslamMacruf2003, bibTeX@0748DhahabiTarikhIslamTadmuri1990
+80#BOOK#MSS######: oclc@871671017, oclc@45631709
+80#BOOK#STUDIES##:
+    oclc@470018644, oclc@4795854125, oclc@6015285849, oclc@6015505776, bibTeX@DeSomogyiAdhDhahabi1936, bibTeX@DeSomogyiTarikh1932, bibTeX@MacrufDahabi1976
+80#BOOK#TRANSLAT#: no translations
+90#BOOK#COMMENT##: "No comments at the moment."
 ```
 
-### MANIFESTATION
+### MANIFESTATION (edition and/or version)
 
 ```yml
-
+00#VERS#CLENGTH##: 13683244
+00#VERS#LENGTH###: 3305488
+00#VERS#URI######: 0748Dhahabi.TarikhIslam.Shamela0035100-ara1
+80#VERS#BASED####: oclc@793504062, bibTeX@0748DhahabiTarikhIslamMacruf2003
+80#VERS#COLLATED#: oclc@793504062, bibTeX@0748DhahabiTarikhIslamMacruf2003
+80#VERS#LINKS####:
+    https://archive.org/details/FP105731/, https://historyofislam.github.io/?/0748Dhahabi/TarikhIslam/BY2003BCM01-ara1/V00P0000
+90#VERS#ANNOTATOR: MGR
+90#VERS#COMMENT##:
+    "The texts is of high quality; because of how the text was stored in Shamela, page numbers are often repeated; the pagination formatting still needs to be fixed (there are more page numbers than there should be)."
+90#VERS#DATE#####: 2019-09-30
+90#VERS#ISSUES###: PAGINATION
 ```
