@@ -13,6 +13,47 @@ secondaryBibs = os.listdir(pathToSec)
 
 csvConnector = "\t"
 
+translitSimple = {
+"ā": "a",
+"ṯ": "th",
+"ǧ": "j",
+"ḥ": "h",
+"ḫ": "kh",
+"ḏ": "dh",
+"š": "sh",
+"ṣ": "s",
+"ḍ": "d",
+"ṭ": "t",
+"ẓ": "z",
+"ʿ": "",
+"ġ": "gh",
+"ḳ": "q",
+"ū": "u",
+"ī": "i",
+"Ā": "A",
+"Ṯ": "Th",
+"Ǧ": "J",
+"Ḥ": "H",
+"Ḫ": "Kh",
+"Ḏ": "Dh",
+"Š": "Sh",
+"Ṣ": "S",
+"Ḍ": "D",
+"Ṭ": "T",
+"Ẓ": "Z",
+"Ġ": "Gh",
+"Ḳ": "Q",
+"Ū": "U",
+"Ī": "I",
+}
+
+
+def simplifyTranslit(text):
+    for k,v in translitSimple.items():
+        text = text.replace(k, v)
+    return(text)
+
+
 def collectBibFiles(bibTexFolder):
     bibFileText = ""
     for f in os.listdir(bibTexFolder):
@@ -104,10 +145,15 @@ def procesBib(bibTexFolder, var):
     for k,v in bibDicFiltered.items():
         aKEY = k
         if "author" in v:
-            aREAD = v["author"] + " --- " + v["title"]
+            if len(v["author"]) >= 20:
+                author = v["author"][:20] + "..."
+            else:
+                author = v["author"]
+            aREAD = author + " --- " + v["title"][:30]
         else:
-            aREAD = "NO AUTHOR" + " --- " + v["title"]
-        aREAD = unicodedata.normalize('NFKD', aREAD).encode('ascii', 'ignore').decode('utf8')
+            aREAD = "NO AUTHOR" + " --- " + v["title"][:30]
+        #aREAD = unicodedata.normalize('NFKD', aREAD).encode('ascii', 'ignore').decode('utf8')
+        aREAD = simplifyTranslit(aREAD)
         aBIBFILE = targetBibLink + aKEY + ".bib"
 
         tsv.append("%s\t%s\t%s" % (aKEY, aREAD, aBIBFILE))
