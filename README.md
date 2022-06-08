@@ -106,9 +106,9 @@ maximromanov: Maxim Romanov
 
 ```yml
 PROV_220607114500: my made-up example
-PROV_220607114500: <http://dx.doi.org/10.1163/1573-3912_islam_COM_0159>
 PROV_220607114501: MacrufDahabi1976s, 45
 PROV_220607114502: 0748DhahabiTarikhIslamMacruf2003
+PROV_220607114503: <http://dx.doi.org/10.1163/1573-3912_islam_COM_0159>
 ```
 
 #### .bib Files for secondary sources
