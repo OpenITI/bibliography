@@ -149,9 +149,15 @@ def procesBib(bibTexFolder, var):
                 author = v["author"][:20] + "..."
             else:
                 author = v["author"]
-            aREAD = author + " --- " + v["title"][:30]
         else:
-            aREAD = "NO AUTHOR" + " --- " + v["title"][:30]
+            author = "NO AUTHOR"
+    
+        if len(v["title"]) >= 20:
+            title = v["title"][:20] + "..."
+        else:
+            title = v["title"][:20]
+
+        aREAD = author + " --- " + title
         #aREAD = unicodedata.normalize('NFKD', aREAD).encode('ascii', 'ignore').decode('utf8')
         aREAD = simplifyTranslit(aREAD)
         aBIBFILE = targetBibLink + aKEY + ".bib"
