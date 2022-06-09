@@ -41,13 +41,15 @@ In fact, this is a little more than just a bibliography. This repository is to k
 			- OGeo: `Althurayya_URI` (if not in Althurayya, must be suggested using the same pattern);
 			- OTime:
 				- `YYYY_MMM_DD`, unknown elements are coded with `X`; codes for Islamic months are defined;
-				- `YYYY_MMM_DD::YYYY_MMM_DD` for periods; unknown elements are coded with `X`; codes for Islamic months are defined;
+				- `YYYY_MMM_DD-YYYY_MMM_DD` for periods; unknown elements are coded with `X`; codes for Islamic months are defined;
+            - Objects are to be connected with ";" semicolons.
 	- AUTHORITY: follows a pattern;
 		- **format:** `AUTH_ContrURI`, where `ContrURI` is the unique identifier of contributors to the OpenITI project;
 		- a YML file is required for storing these `ContrURI` with detailed descriptions as values;
 	- PROVENANCE (*alternative*):
 		- **format:**:
 			- `PROV_(\d){12}` (example: `PROV_220607114500`, where `220607114500` is a timestamp of YYMMDDHHMMSS to guarantee uniqueness) :: detailed reference is given in `references.yml` file.
+            - references are to be connected with ";" semicolons;
 		- `reference.yml` contains detailed information (see below);	
 	
 
@@ -70,12 +72,12 @@ In fact, this is a little more than just a bibliography. This repository is to k
 
 **STAR-like Record** (a packed TRIPLE with implied SUBJECT?):
 
-`teacherOf_tafaqqahaCalayhi@0771Subki,DIMASHQ_363E335N_S,699_XXX_XX::715_XXX_XX@AUTH_MGR@PROV_220607114503`
+`teacherOf_tafaqqahaCalayhi@0771Subki;DIMASHQ_363E335N_S;699_XXX_XX-715_XXX_XX@AUTH_MGR@PROV_220607114503`
 
 - SUBJECT is implied by the NAME of the YML file; 
 - the PREDICATE is always in the first position;
-- OBJECTS (O, G, T): follow specific patterns; some may be omitted if not known;
-- AUTH and MSC/PRI/SEC may be omitted;
+- OBJECTS (O; G; T): follow specific patterns; some may be omitted if not known;
+- AUTH and PROV may be omitted;
 
 ## YML EXAMPLES
 
