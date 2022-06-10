@@ -46,7 +46,7 @@ In fact, this is a little more than just a bibliography. This repository is to k
 	- AUTHORITY: follows a pattern;
 		- **format:** `AUTH_ContrURI`, where `ContrURI` is the unique identifier of contributors to the OpenITI project;
 		- a YML file is required for storing these `ContrURI` with detailed descriptions as values;
-	- PROVENANCE (*alternative*):
+	- PROVENANCE:
 		- **format:**:
 			- `(\d){12}` (example: `220607114500`, where `220607114500` is a timestamp of YYMMDDHHMMSS to guarantee uniqueness) :: detailed reference is given in the YML file for references.
             - references are to be connected with ";" semicolons;
@@ -66,18 +66,18 @@ In fact, this is a little more than just a bibliography. This repository is to k
 
 ### Coding example
 
-**TEXT**: ʿAbd al-Wahhāb al-Subkī, the author of the *Ṭabaḳāt al-Šāfiʿiyyaŧ al-Kubrá*, was among al-Ḏahabī’s students. Under his tutelage, al-Subkī studied *fiqh* (*tafaqqaha ʿalay-hi*) from 699 till 715 AH. (Source: a made-up example, REF `PROV_220607114503`).
+**TEXT**: ʿAbd al-Wahhāb al-Subkī, the author of the *Ṭabaḳāt al-Šāfiʿiyyaŧ al-Kubrá*, was among al-Ḏahabī’s students. Under his tutelage, al-Subkī studied *fiqh* (*tafaqqaha ʿalay-hi*) from 699 till 715 AH. (Source: `22060711450` and `220607114500` — see YML file for details).
 
 **Assertion**: al-Ḏahabī was a teacher (*tafaqqaha ʿalay-hi*) of al-Subkī during 699-715 AH. 
 
-**STAR-like Record** (a packed TRIPLE with implied SUBJECT?):
+**STAR-like Record** (with implied SUBJECT):
 
 `teacherOf_tafaqqahaCalayhi@0771Subki;DIMASHQ_363E335N_S;699_XXX_XX-715_XXX_XX@AUTH_MGR@220607114503;220607114500`
 
 - SUBJECT is implied by the NAME of the YML file; 
 - the PREDICATE is always in the first position;
 - OBJECTS (O; G; T): follow specific patterns; some may be omitted if not known;
-- AUTH and PROV may be omitted;
+- AUTH and PROV may be omitted, but should not be;
 
 ## YML EXAMPLES
 
@@ -99,23 +99,23 @@ In fact, this is a little more than just a bibliography. This repository is to k
 11#AUTH#NISBA##AR: التركماني، الفارقي، الدمشقي، الشافعي، المؤرخ، الحافظ، الذهبي
 11#AUTH#SHUHRA#AR: الذهبي
 20#AUTH#EVENTS###:
-    born@DIMASHQ_363E335N_S@673_RA2_01@AUTH_MGR@MSC_220607114500,
-    born@MAYYAFARIQIN_410E381N_S@AUTH_MGR@MSC_220607114500,
-    died@DIMASHQ_363E335N_S@AUTH_MGR@MSC_220607114500,
-    born@673_RA2_01@AUTH_MGR@MSC_220607114500,
-    born@673_RA2_03@AUTH_MGR@MSC_220607114500,
-    born@673_RA1_01@AUTH_MGR@MSC_220607114500,
-    born@673_RA1_03@AUTH_MGR@MSC_220607114500,
-    died@748_DHQ_03@AUTH_MGR@MSC_220607114500,
-    died@753_XXX_XX@AUTH_MGR@MSC_220607114500,
-    resided@DIMASHQ_363E335N_S@AUTH_MGR@MSC_220607114500,
-    visited@FUSTAT_312E300N_S@AUTH_MGR@MSC_220607114500,
-    visited@QAHIRA_312E300N_S@AUTH_MGR@MSC_220607114500,
-    visited@Misr_RE@AUTH_MGR@MSC_220607114500,
-    visited@Sham_RE@AUTH_MGR@MSC_220607114500,
-    visited@MAKKA_398E213N_S@AUTH_MGR@MSC_220607114500,
-    visited@ISKANDARIYYA_299E311N_S@AUTH_MGR@MSC_220607114500
-40#AUTH#RELATED##: teacherOf@0771Subki@AUTH_MGR@MSC_220607114500
+    born@DIMASHQ_363E335N_S@673_RA2_01@AUTH_MGR@220607114500,
+    born@MAYYAFARIQIN_410E381N_S@AUTH_MGR@220607114500,
+    died@DIMASHQ_363E335N_S@AUTH_MGR@220607114500,
+    born@673_RA2_01@AUTH_MGR@220607114500,
+    born@673_RA2_03@AUTH_MGR@220607114500,
+    born@673_RA1_01@AUTH_MGR@220607114500,
+    born@673_RA1_03@AUTH_MGR@220607114500,
+    died@748_DHQ_03@AUTH_MGR@220607114500,
+    died@753_XXX_XX@AUTH_MGR@220607114500,
+    resided@DIMASHQ_363E335N_S@AUTH_MGR@220607114500,
+    visited@FUSTAT_312E300N_S@AUTH_MGR@220607114500,
+    visited@QAHIRA_312E300N_S@AUTH_MGR@220607114500,
+    visited@Misr_RE@AUTH_MGR@220607114500,
+    visited@Sham_RE@AUTH_MGR@220607114500,
+    visited@MAKKA_398E213N_S@AUTH_MGR@220607114500,
+    visited@ISKANDARIYYA_299E311N_S@AUTH_MGR@220607114500
+40#AUTH#RELATED##: teacherOf@0771Subki@AUTH_MGR@220607114500
 80#AUTH#BIBLIO###: bibTeX@SayhAlHafiz1994
 90#AUTH#COMMENT##:
     "(From EI2) al-Ḏh̲ahabī, S̲h̲ams al-Dīn Abū ʿAbd Allāh Muḥammad b. ʿUt̲h̲mān b.
