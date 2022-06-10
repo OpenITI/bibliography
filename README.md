@@ -48,7 +48,7 @@ In fact, this is a little more than just a bibliography. This repository is to k
 		- a YML file is required for storing these `ContrURI` with detailed descriptions as values;
 	- PROVENANCE (*alternative*):
 		- **format:**:
-			- `PROV_(\d){12}` (example: `PROV_220607114500`, where `220607114500` is a timestamp of YYMMDDHHMMSS to guarantee uniqueness) :: detailed reference is given in `references.yml` file.
+			- `(\d){12}` (example: `220607114500`, where `220607114500` is a timestamp of YYMMDDHHMMSS to guarantee uniqueness) :: detailed reference is given in the YML file for references.
             - references are to be connected with ";" semicolons;
 		- `reference.yml` contains detailed information (see below);	
 	
@@ -72,7 +72,7 @@ In fact, this is a little more than just a bibliography. This repository is to k
 
 **STAR-like Record** (a packed TRIPLE with implied SUBJECT?):
 
-`teacherOf_tafaqqahaCalayhi@0771Subki;DIMASHQ_363E335N_S;699_XXX_XX-715_XXX_XX@AUTH_MGR@PROV_220607114503`
+`teacherOf_tafaqqahaCalayhi@0771Subki;DIMASHQ_363E335N_S;699_XXX_XX-715_XXX_XX@AUTH_MGR@220607114503;220607114500`
 
 - SUBJECT is implied by the NAME of the YML file; 
 - the PREDICATE is always in the first position;
@@ -175,14 +175,7 @@ In fact, this is a little more than just a bibliography. This repository is to k
 
 #### YML CONTRIBUTORS:
 
-I chose to go with initials, but it does not really matter --- feel free to add yours. BTW, we can use our github accounts for our URIs.
-
-```yml
-SBS: Sarah Bowen Savant
-MGR: Maxim G. Romanov
-```
-
-*Alternatively (using our GitHub Accounts):*
+Using our github accounts as URIs:
 
 ```yml
 sarahkitab: Sarah Bowen Savant
@@ -198,13 +191,15 @@ sohailmerchant: Sohail Merchant
 maximromanov: Maxim Romanov
 ```
 
-#### YML REFERENCES
+### FORMAT OF YML AND BIB FILES
+
+#### references in .yml files
 
 ```yml
-PROV_220607114500: <http://dx.doi.org/10.1163/1573-3912_islam_COM_0159>
-PROV_220607114501: MacrufDahabi1976s, 45
-PROV_220607114502: 0748DhahabiTarikhIslamMacruf2003
-PROV_220607114503: my made-up example
+220607114500: <http://dx.doi.org/10.1163/1573-3912_islam_COM_0159>
+220607114501: MacrufDahabi1976s, 45
+220607114502: 0748DhahabiTarikhIslamMacruf2003
+220607114503: my made-up example
 ```
 
 #### .bib Files for secondary sources
@@ -247,3 +242,14 @@ each file may contain either a singe or multiple records
 
 - `AuthorTitleYEAR` for secondary sources;
 - `XXXXAuthorTitleEditionYEAR` for primary sources, where `XXXXAuthorTitle` is the OpenITI URI `XXXXAuthor.Title`, but without a dot;
+
+
+### YML and BIB file in the OpenITI
+
+References and bibliography is to be collected locally, i.e., within XXXXAuthor folders, in the following manner.
+
+- `XXXXAuthor.References.yml` — this is the main dictionary for all references, primary, secondary, on author, on works, on specific works, including editions and MSS. The format is: “YYMMDDHHMMSS: (bibTeX reference|any other kind of comment)". Most commonly, references should be given in `pandoc` format, i.e. `MacrufDahabi1976s, 45`, where `MacrufDahabi1976s` is the bibTeX code (complete reference is in `XXXXAuthor.bib`), and `45` is the page number. This yml file is to be stored in `./data/XXXXAuthor/`
+- XXXXAuthor.bib — for secondary literature on the author and his works more generally; this file contains references in bibTeX format. It is to be stored in `./data/XXXXAuthor/`.
+- XXXXAuthor.Title.bib — for bibliographical records on editions of the specific work, including all known editions and MSS. It is to be stored in `./data/XXXXAuthor/XXXXAuthor.Title/`.
+- XXXXAuthor.Title.Version.bib — for the bibliographical record for the specific version/edition; this file is to contain a single reference that corresponds to the version of the text in the digital file; if collated with some other edition, the reference for that edition should be added to `XXXXAuthor.Title.bib`.
+
