@@ -133,13 +133,13 @@ In fact, this is a little more than just a bibliography. This repository is to k
 
 ```yml
 00#BOOK#URI######: 0748Dhahabi.TarikhIslam
-10#BOOK#GENRES###: GAL@geschichte, MGR@obituaryChronicle
+10#BOOK#CATEGORY#: GAL@geschichte, MGR@obituaryChronicle
 10#BOOK#TITLEA#AR: Taʾrīḫ al-islām
 10#BOOK#TITLEB#AR: Taʾrīḫ al-islām wa-ṭabaqāt al-mašāhīr wa-l-aʿlām
 11#BOOK#TITLEA#AR: تأريخ الإسلام
 11#BOOK#TITLEB#AR: تأريخ الإسلام وطبقات المشاهير والأعلام
 20#BOOK#EVENTS###:
-    finished@DIMASHQ_363E335N_S,XXXX_RAM_XX@AUTH_MGR@PROV_MacrufDahabi1976
+    finished@DIMASHQ_363E335N_S,XXXX_RAM_XX@AUTH_MGR@220607114501
 50#BOOK#RELATED##: continuedBy_dhayl@0748Dhahabi.DhaylTarikhIslam
 80#BOOK#EDITIONS#:
     oclc@38216380, oclc@478192231, oclc@20774545,
